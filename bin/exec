@@ -1,4 +1,10 @@
 #!/usr/bin/env node
 
-var argv = require('minimist')(process.argv.slice(2), { '--': true })
-require('..')(argv)
+var program = require('commander')
+
+program
+  .version(require('../package').version)
+  
+program
+  .parse(process.argv)
+
